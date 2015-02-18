@@ -1,6 +1,7 @@
 class Author < ActiveRecord::Base
   has_secure_password
   has_many :surveys
+  validates_uniqueness_of :email
 
   # def self.names_with_titles
   #   joins(:surveys).
