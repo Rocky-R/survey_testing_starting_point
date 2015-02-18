@@ -21,4 +21,8 @@ class AuthorTest < ActiveSupport::TestCase
         password: "goat")
     end
   end
+
+  test "find author by email" do
+    assert_equal "Emperor Goatimus", Author.find_specific_email("eg@tiy.com").first.name
+  end
 end
