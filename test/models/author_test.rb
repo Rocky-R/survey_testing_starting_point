@@ -13,4 +13,12 @@ class AuthorTest < ActiveSupport::TestCase
     usurper = Author.new(name: "Lord Rambius", email: "eg@tiy.com")
     refute usurper.save
   end
+
+  test "author count change" do
+    assert_difference "Author.count", 1 do
+      Author.create(name: "Dude",
+        email: "dude@awesome.com",
+        password: "goat")
+    end
+  end
 end
