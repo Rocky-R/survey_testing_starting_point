@@ -12,7 +12,8 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     if current_user.nil?
-      redirect_to sessions_log_in_path
+      redirect_to sessions_log_in_path,
+      notice: "Please log in to create a survey"
     end
   end
 end
